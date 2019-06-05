@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
     "pretest": "nodemon app.js"
   },
   "author": "Reikaa",
@@ -13,7 +13,9 @@
     "body-parser": "^1.19.0",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
-    "express-prettify": "^0.1.1",
-    "mongoose": "^5.5.12"
-  }
+    "express-session": "^1.16.1",
+    "mongoose": "^5.5.12",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {}
 }

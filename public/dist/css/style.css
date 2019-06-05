@@ -1,0 +1,77 @@
+.blog-header{
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;    
+}
+
+.blog-header-logo{
+    font-size: 2.25rem;
+}
+
+.tripple-hub > a:hover{
+    text-decoration: none;
+    color: #ffc107 !important;
+}
+
+.dropdown-style{
+    margin-top: .35rem !important;
+}
+
+.carousel-style{
+    -webkit-box-shadow: 0px 5px 5px -4px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 5px 5px -4px rgba(0, 0, 0, 0.22);
+    -ms-box-shadow: 0px 5px 5px -4px rgba(0, 0, 0, 0.22);
+    -o-box-shadow: 0px 5px 5px -4px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px 5px 5px -4px rgba(0, 0, 0, 0.22);
+}
+
+.carousel-header{
+    top: 0;
+}
+
+.carousel-overlay{
+    background-color:#000; 
+}
+
+.carousel-overlay > img{
+    opacity: 0.5;
+}
+
+.mh-image-carousel{
+    max-height : 521px !important;
+}
+
+.form-main{
+    position: static;
+    display: block;
+    border:none;
+    border-radius: 0;
+}
+
+.form-main > .dropdown-item{
+    padding-left: 0;
+}
+
+.dropdown-item-main{
+    position: absolute;
+    min-width: 19rem;
+    overflow: visible;
+    z-index: 100;
+    display: block;
+}
+
+.coming-soon{
+    z-index: 0;
+}
+
+.logo-fb :hover{
+    color: #3b5998;
+    transition-duration: 0.5s;
+}
+.logo-twt :hover{
+    color: #55acee;
+    transition-duration: 0.5s;
+}
+.logo-ig :hover{
+    color: #125688;
+    transition-duration: 0.5s;
+}
