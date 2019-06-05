@@ -10,63 +10,51 @@ db.once('open', function callback () {
     console.log("connected");
 });
 
-function generate_id(){
+function generate_id(required){
     return {
         type     : mongoose.SchemaTypes.ObjectId,
-        required : true,
+        required : required,
         default  : mongoose.Types.ObjectId
     }
 }
 
-let destination_list = mongoose.model('destination_list', mongoose.Schema({
-    _id     : generate_id(),
-    name    : String,
-    city    : String,
-    country : String
-}), "destination_list")
 
-let destination_info = mongoose.model('destination_info', mongoose.Schema({
-    _id         : generate_id(),
-    name        : String,
-    address     : String,
-    facility    : [String]
-}), "destination_info")
-
-let user = mongoose.model('user', mongoose.Schema({
-    _id         : generate_id(),
+let user_id = mongoose.model('user_id', mongoose.Schema({
+    _id         : generate_id(true),
     email       : String,
-    username    : String,
-    password    : String,
-    info        : mongoose.SchemaTypes.ObjectId
-}), "user")
+    password    : String
+}), "user_id")
 
-let user_info = mongoose.model('user_info', mongoose.Schema({
-    _id         : generate_id(),
-    profile_img : Buffer,
-    name        : String,
-    email       : String,
-    address     : String,
-    is_man      : Boolean,
-    is_admin    : Boolean,
-}), "user_info")
+let user_profile = mongoose.model('user_profile', mongoose.Schema({
+    _id               : generate_id(true),
+    f_profile_img_id  : generate_id(false),
+    username          : String,
+    address           : String,
+    is_admin          : Boolean,
+    last_online       : Date,
+    f_comment         : [mongoose.SchemaTypes.ObjectId],
+}), "user_profile")
+
+let profile_img = mongoose.model('profile_img', mongoose.Schema({
+    _id          : generate_id(),
+    small        : Buffer,
+    normal       : Buffer
+}), "profile_img")
 
 
 let comment = mongoose.model('comment', mongoose.Schema({
-    _id             : generate_id(),
-    author          : generate_id(),
-    comment_content : String,
-    date            : {
-        type    : Date,
-        default : Date.now
-    }
+    _id         : generate_id(true),
+    author      : generate_id(true),
+    date        : Date,
+    content     : String
 }), "comment")
 
-    
 
 module.exports = {
-    destination_list: destination_list,
-    destination_info: destination_info,
-    user: user,
-    user_info: user_info,
+    // destination_list: destination_list,
+    // destination_info: destination_info,
+    user_id: user_id,
+    user_profile: user_profile,
+    profile: profile_img,
     comment: comment,
 }

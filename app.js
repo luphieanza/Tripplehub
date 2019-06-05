@@ -14,7 +14,7 @@ app.listen(process.env.PORT || 6007, function(){
     console.log("App running")
 })
 
-app.use('/api', require('./public/api/completion'))
+// app.use('/api', require('./public/api/completion'))
 
 app.get('/', function(request, respond){
     respond.render('pages/index')
